@@ -1,7 +1,9 @@
+const path = require('path');
+
 module.exports = {
-    entry: './src/index.js',
+    entry: path.join(__dirname, 'src/index.js'),
     output: {
-        path: __dirname + './public',
+        path: path.join(__dirname, './dist'),
         filename: 'bundle.js'
     },
 
@@ -12,5 +14,10 @@ module.exports = {
                 loader: 'babel-loader'
             }
         ]
+    },
+    devServer: {
+        port: 3000,
+        historyApiFallback: true,
+        contentBase: path.join(__dirname, './dist')
     }
 }
