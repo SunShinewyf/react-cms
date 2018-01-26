@@ -5,7 +5,7 @@ export default class User extends Component {
         return (
             <div>
                 this is User page
-                </div>
+            </div>
         )
     }
 }
