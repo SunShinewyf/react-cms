@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
-import './Footer.less';
+import {Layout} from 'antd';;
 
-export default class Footer extends Component {
+import './Footer.less';
+import 'antd/dist/antd.less';
+
+const {Footer} = Layout;
+
+export default class PublicFooter extends Component {
     render() {
         return (
-            <footer className="footer-container">
+            <Footer className="footer-container">
                 <p>this is the footer container</p>
-            </footer>
+            </Footer>
         )
     }
 }

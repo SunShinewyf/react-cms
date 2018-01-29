@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from 'components/Header/Header'
-import Footer from 'components/Footer/Footer'
+import PublicFooter from 'components/Footer/Footer'
 import './Home.less'
 
 export default class Home extends Component {
@@ -9,7 +9,7 @@ export default class Home extends Component {
             <div className="container">
                 <Header/>
                 this is Home page
-                <Footer/>
+                <PublicFooter/>
             </div>
         )
     }
