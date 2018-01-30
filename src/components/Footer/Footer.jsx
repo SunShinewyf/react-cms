@@ -6,6 +6,11 @@ import './Footer.less';
 const { Footer } = Layout;
 
 export default class PublicFooter extends Component {
+    constructor(){
+        super();
+    }
+
+    
     render() {
         return (
             <Footer className="footer-container">
