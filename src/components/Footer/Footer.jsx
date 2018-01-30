@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Layout } from 'antd';;
 
 import './Footer.less';
-import 'antd/dist/antd.less';
-
+// import './antd.css'
 const { Footer } = Layout;
 
 export default class PublicFooter extends Component {

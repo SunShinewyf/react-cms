@@ -8,6 +8,6 @@ import getRouter from 'router/router'
 ReactDom.render(
     <Provider store={store}>
         {getRouter()}
-   </Provider>,
+    </Provider>,
     document.getElementById('app')
 );

@@ -4,7 +4,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
-        bundle: path.join(__dirname, 'src/index.js'),
+        bundle: path.join(__dirname, 'src/index.jsx'),
         vendor: [
             'react',
             'react-dom'
@@ -44,13 +44,14 @@ module.exports = {
     ],
 
     resolve: {
+        extensions: ['.js','.jsx'],
         alias: {
             components: path.join(__dirname, 'src/components'),
             router: path.join(__dirname, 'src/router'),
             pages: path.join(__dirname, 'src/pages'),
             actions: path.join(__dirname, 'src/actions'),
             reducers: path.join(__dirname, 'src/reducers'),
-            stores: path.join(__dirname, 'src/stores')
+            stores: path.join(__dirname, 'src/stores'),
         }
     }
 }
