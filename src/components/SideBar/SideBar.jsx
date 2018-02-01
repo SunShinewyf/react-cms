@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Layout, Menu, Icon, Button } from 'antd';
 import './SideBar.less'
 
-const { Side } = Layout;
+// const { Side } = L;
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
@@ -14,7 +14,7 @@ export default class SideBar extends Component {
 
     render() {
         return (
-            <div className="side-panel">
+            <Layout.Sider className="side-panel">
                 <div className="side-logo"/>
                 {/* <Button icon="menu-fold" type="primary" className="menu-button"/> */}
                 <Menu mode="inline" theme="dark" className="side-menu">
@@ -35,7 +35,7 @@ export default class SideBar extends Component {
                         <a href="https://ant.design" target="_blank" rel="noopener noreferrer">设置</a>
                     </Menu.Item>
                 </Menu>
-            </div>
+            </Layout.Sider>
         )
     }
 };

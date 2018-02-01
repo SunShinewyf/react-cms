@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Layout } from 'antd';;
 
 import './Footer.less';
-// import './antd.css'
 const { Footer } = Layout;
 
 export default class PublicFooter extends Component {
@@ -14,7 +13,7 @@ export default class PublicFooter extends Component {
     render() {
         return (
             <Footer className="footer-container">
-                <p>this is the footer container</p>
+                <div className="footer-text">react-cms © SunShinewyf </div>
             </Footer>
         )
     }
