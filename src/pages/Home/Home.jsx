@@ -6,6 +6,8 @@ import { Layout } from 'antd';
 import Header from 'components/Header/Header'
 import SideBar from 'components/SideBar/SideBar'
 import Footer from 'components/Footer/Footer'
+import { Route, Redirect } from 'react-router-dom';
+import Routers from 'router/router';
 import './Home.less'
 
 const { Content } = Layout;
@@ -20,7 +22,9 @@ class App extends Component {
                 <SideBar />
                 <Layout>
                     <Header />
-                    <Content className="content-container"/>
+                    <Content className="content-container">
+                       
+                    </Content>
                     <Footer />
                 </Layout>
 
