@@ -52,6 +52,7 @@ module.exports = {
             actions: path.join(__dirname, 'src/actions'),
             reducers: path.join(__dirname, 'src/reducers'),
             stores: path.join(__dirname, 'src/stores'),
+            api: path.join(__dirname,'src/api');
         }
     }
 }
