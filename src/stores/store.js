@@ -1,5 +1,5 @@
 import {createStore} from 'redux';
-import combineReducers from 'reducers/combineReducer';
+import rootReducers from 'reducers/combineReducer';
 
-let store = createStore(combineReducers);
+let store = createStore(rootReducers);
 export default store;

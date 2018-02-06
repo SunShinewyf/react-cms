@@ -1,22 +1,23 @@
-import api from 'api/api'
+import InitialState from 'api/initialState'
+import * as UserTypes from 'constants/userTypes'
+
+
 //获取用户信息
-export const FETCH_USER_PENDING = 'FETCH_USER_PENDING';
-export const FETCH_USER_SUCCESS = 'FETCH_USER_SUCCESS';
-
-//登录状态
-export const LOGIN_PENDING = 'LOGIN_PENDING';
-export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
-export const LOGIN_ERROR = 'LOGIN_ERROR';
-
-export function fetchUser(){
-    let uid = window.localStorage.getItem('uid');
-    if(!uid){
+export const userActions = {
+    login(user,password) {
         return {
-            type: 'UID_NOT_FOUND'
+            type: 'LOGIN',
+            data: {
+                id: id,
+                user: user,
+                password: password
+            }
         }
-    }
-    return {
-        type:  'FETCH_USER',
-        user: ''
+    },
+
+    logout() {
+        return {
+            type: 'LOGOUT'
+        }
     }
 }

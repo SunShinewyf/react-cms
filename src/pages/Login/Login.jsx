@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { Form, Input, Button, Row, Col, message, Icon } from 'antd';
-import { withRouter } from 'react-router-dom';
+import {connect } from 'react-redux'
 import './Login.less';
 
-export default class Login extends Component {
-    constructor() {
-        super();
+class Login extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            login: false
+        }
     }
 
     handleSubmit(e) {
@@ -34,3 +37,17 @@ export default class Login extends Component {
         );
     }
 }
+
+const mapStateToProps = (state, ownProps) => {
+    return {
+        prop: state.prop
+    }
+}
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {
+        dispatch1: () => {
+            dispatch(actionCreator)
+        }
+    }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(Login);
