@@ -4,13 +4,16 @@ import * as UserTypes from 'constants/userTypes'
 
 //获取用户信息
 export const userActions = {
-    login(user,password) {
+    login(user, password) {
         return {
             type: 'LOGIN',
-            data: {
-                id: id,
-                user: user,
-                password: password
+            callback: {
+                promise: api.put('/login', {
+                    data: {
+                        user: user,
+                        password: password
+                    }
+                })
             }
         }
     },

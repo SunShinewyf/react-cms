@@ -15,9 +15,6 @@ class Login extends Component {
         e.preventDefault();
     }
 
-    toLogin() {
-
-    }
 
     render() {
         return (
