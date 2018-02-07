@@ -8,7 +8,7 @@ import './Login.less';
 class Login extends Component {
     constructor(props) {
         super(props);
-    
+
         this.state = {
             login: false
         }
@@ -25,9 +25,7 @@ class Login extends Component {
         })
 
         const data = this.props.form.getFieldsValue();
-        this.props.login(data.name, data.password);
-        this.props.login(data.name, data.password).callback.promise.then(res => {
-            console.log(res, '8888')
+        this.props.login(data.name, data.password).callback.then(res => {
             if (!res.error && res.data) {
                 this.setState({
                     login: true
@@ -36,7 +34,6 @@ class Login extends Component {
                 this.props.history.replace('/');
             }
         }).catch(err => {
-            console.log(err,'8888')
             message.error('用户名或密码错误,请重试~');
             this.setState({
                 login: false
@@ -82,18 +79,12 @@ class Login extends Component {
 Login = Form.create()(Login);
 const mapStateToProps = (state) => {
     const { user } = state;
-    if (user.user) {
-        return {
-            user: user.user,
-            login: user.login,
-            loginError: ''
-        }
-    }
     return {
-        user: null,
+        user: user.user ? user.user : null,
         login: user.login,
-        loginError: user.loginError
+        loginError: user.user ? null : user.loginError
     }
+
 }
 const mapDispatchToProps = (dispatch) => {
     return {

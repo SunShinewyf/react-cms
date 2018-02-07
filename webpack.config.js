@@ -53,7 +53,8 @@ module.exports = {
             reducers: path.join(__dirname, 'src/reducers'),
             stores: path.join(__dirname, 'src/stores'),
             api: path.join(__dirname,'src/api'),
-            constants: path.join(__dirname,'src/constants')
+            constants: path.join(__dirname,'src/constants'),
+            utils: path.join(__dirname,'src/utils')
         }
     }
 }

@@ -1,29 +1,31 @@
 import React, { Component } from 'react';
-
+import { Route, Redirect } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import { Layout } from 'antd';
-
 
 import Header from 'components/Header/Header'
 import SideBar from 'components/SideBar/SideBar'
 import Footer from 'components/Footer/Footer'
-import { Route, Redirect } from 'react-router-dom';
-import Routers from 'router/router';
+import { userActions } from 'actions/user'
+
 import './Home.less'
 
 const { Content } = Layout;
-class App extends Component {
-    constructor() {
-        super();
+class Home extends Component {
+    constructor(props) {
+        super(props);
     }
 
     render() {
+        const logout = this.props.logout;
         return (
             <Layout className="ant-layout-has-sider">
                 <SideBar />
                 <Layout>
-                    <Header />
+                    <Header logout={logout}/>
                     <Content className="content-container">
-                       
+
                     </Content>
                     <Footer />
                 </Layout>
@@ -33,4 +35,16 @@ class App extends Component {
     }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+    const { user } = state;
+    return {
+        user: user ? user : null
+    };
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        logout: bindActionCreators(userActions.logout, dispatch)
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -6,20 +6,19 @@ export const userActions = {
     login(name, password) {
         return {
             type: 'LOGIN',
-            callback: {
-                promise: api.put('/login', {
-                    user: {
-                        name: name,
-                        password: password
-                    }
-                })
-            }
+            callback: api.put('/login', {
+                user: {
+                    name: name,
+                    password: password
+                }
+            })
         }
     },
 
     logout() {
         return {
-            type: 'LOGOUT'
+            type: 'LOGOUT',
+            callback: api.get('/logout')
         }
     }
 }
