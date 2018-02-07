@@ -1,16 +1,15 @@
-import InitialState from 'api/initialState'
 import * as UserTypes from 'constants/userTypes'
-
+import api from 'api/index'
 
 //获取用户信息
 export const userActions = {
-    login(user, password) {
+    login(name, password) {
         return {
             type: 'LOGIN',
             callback: {
                 promise: api.put('/login', {
-                    data: {
-                        user: user,
+                    user: {
+                        name: name,
                         password: password
                     }
                 })
