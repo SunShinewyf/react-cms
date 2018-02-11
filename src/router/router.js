@@ -13,7 +13,7 @@ const Routers = () => (
     <Router>
         <Switch>
             <Route path="/login" component={Login} />
-            <Route path="/counter" component={Counter}/>
+            <Route path="/counter" component={Counter} />
             <Route path="/" component={authValidate(Home)} />
         </Switch>
     </Router>
