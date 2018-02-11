@@ -37,7 +37,6 @@ class publicHeader extends Component {
                     <Col span={8} className="search-box">
                         <Search />
                     </Col>
-
                     <Col span={3} className="header-dropdown">
                         <Dropdown overlay={menu}>
                             <a className="ant-dropdown-link" href="#">

@@ -15,7 +15,7 @@ export default class SideBar extends Component {
     render() {
         return (
             <Layout.Sider className="side-panel">
-                <div className="side-logo"/>
+                <div className="side-logo" />
                 {/* <Button icon="menu-fold" type="primary" className="menu-button"/> */}
                 <Menu mode="inline" theme="dark" className="side-menu">
                     <Menu.Item key="user">

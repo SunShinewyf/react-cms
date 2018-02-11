@@ -2,6 +2,7 @@ module.exports = {
     "plugins": [
         "react"
     ],
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true,
@@ -160,12 +161,12 @@ module.exports = {
         "react/jsx-handler-names": "off",
         // @fixable jsx 的 children 缩进必须为四个空格
         "react/jsx-indent": [
-            "error",
+            "off",
             4
         ],
         // @fixable jsx 的 props 缩进必须为四个空格
         "react/jsx-indent-props": [
-            "error",
+            "off",
             4
         ],
         // 数组中的 jsx 必须有 key
@@ -186,7 +187,7 @@ module.exports = {
         // 禁止使用 target="_blank"
         // @off 没必要限制
         "react/jsx-no-target-blank": "off",
-        // 禁止使用未定义的 jsx elemet
+        // 禁止使用未定义的 jsx element
         "react/jsx-no-undef": "error",
         // 禁止使用 pascal 写法的 jsx，比如 <TEST_COMPONENT>
         "react/jsx-pascal-case": "error",

@@ -23,7 +23,7 @@ class Home extends Component {
             <Layout className="ant-layout-has-sider">
                 <SideBar />
                 <Layout>
-                    <Header logout={logout}/>
+                    <Header logout={logout} />
                     <Content className="content-container">
 
                     </Content>
