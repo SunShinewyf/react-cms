@@ -1,10 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+require('babel-polyfill')
 
 module.exports = {
     entry: {
-        bundle: path.join(__dirname, 'src/index.jsx'),
+        bundle: ["babel-polyfill", path.join(__dirname, 'src/index.jsx')],
         vendor: [
             'react',
             'react-dom'
@@ -19,7 +20,7 @@ module.exports = {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                use: ['babel-loader','eslint-loader'],
+                use: ['babel-loader', 'eslint-loader'],
                 exclude: /node_modules/
             },
             {
@@ -44,7 +45,7 @@ module.exports = {
     ],
 
     resolve: {
-        extensions: ['.js','.jsx'],
+        extensions: ['.js', '.jsx'],
         alias: {
             components: path.join(__dirname, 'src/components'),
             router: path.join(__dirname, 'src/router'),
@@ -52,10 +53,10 @@ module.exports = {
             actions: path.join(__dirname, 'src/actions'),
             reducers: path.join(__dirname, 'src/reducers'),
             stores: path.join(__dirname, 'src/stores'),
-            api: path.join(__dirname,'src/api'),
-            constants: path.join(__dirname,'src/constants'),
-            utils: path.join(__dirname,'src/utils'),
-            middlewares: path.join(__dirname, 'src/middlewares')
+            api: path.join(__dirname, 'src/api'),
+            constants: path.join(__dirname, 'src/constants'),
+            utils: path.join(__dirname, 'src/utils'),
+            sagas: path.join(__dirname, 'src/sagas')
         }
     }
 }

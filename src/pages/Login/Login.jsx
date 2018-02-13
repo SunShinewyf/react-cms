@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Form, Input, Button, Row, Col, message, Icon } from 'antd';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux'
-import { userActions } from 'actions/user'
+import { loginAction } from 'actions/user'
 import './Login.less';
 
 class Login extends Component {
@@ -88,7 +88,7 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        login: bindActionCreators(userActions.login, dispatch)
+        login: bindActionCreators(loginAction, dispatch)
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

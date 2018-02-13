@@ -44,7 +44,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        logout: bindActionCreators(userActions.logout, dispatch)
+        
     }
+    // return {
+    //     logout: bindActionCreators(userActions.logout, dispatch)
+    // }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

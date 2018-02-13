@@ -14,7 +14,8 @@ const Routers = () => (
         <Switch>
             <Route path="/login" component={Login} />
             <Route path="/counter" component={Counter} />
-            <Route path="/" component={authValidate(Home)} />
+            {/* <Route path="/" component={authValidate(Home)} /> */}
+            <Route path="/" component={Home} />
         </Switch>
     </Router>
 );
